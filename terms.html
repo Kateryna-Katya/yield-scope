@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield Scope — IT-школа нового поколения</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M16 7L24 11.5V20.5L16 25L8 20.5V11.5L16 7Z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module" crossorigin src="/yield-scope/assets/main-BN3kExUR.js"></script>
+  <link rel="stylesheet" crossorigin href="/yield-scope/assets/main-CYwLeiKV.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="container header__container">
+    <a href="./#home" class="logo">
+      <div class="logo__icon"></div>
+      <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
+    </a>
+
+    <nav class="nav" id="nav-menu">
+      <ul class="nav__list">
+        <li><a href="./#home" class="nav__link">Главная</a></li>
+        <li><a href="./#about" class="nav__link">О платформе</a></li>
+        <li><a href="./#benefits" class="nav__link">Преимущества</a></li>
+        <li><a href="./#innovations" class="nav__link">Инновации</a></li>
+        <li><a href="./#blog" class="nav__link">Блог</a></li>
+        <li class="mobile-only"><a href="./#contact" class="nav__link">Связаться</a></li>
+      </ul>
+    </nav>
+
+    <a href="./#contact" class="btn btn--outline header__cta">Связаться</a>
+
+    <button class="burger" id="burger-menu" aria-label="Открыть меню">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="pages">
+    <div class="container">
+      <h1>Условия использования</h1>
+
+      <p>
+        Добро пожаловать на сайт <strong>yield-scope.life</strong>! Настоящие Условия использования
+        (далее — «Условия» или «Соглашение») представляют собой юридически
+        обязывающий договор между вами (далее — «Пользователь») и IT-школой <strong>Yield Scope</strong>
+        (далее — «Компания», «мы», «нас»). Пожалуйста, внимательно
+        ознакомьтесь с ними. Используя наш сайт и любые связанные с ним
+        образовательные услуги, вы подтверждаете свое полное и безоговорочное согласие с
+        данными Условиями. Если вы не согласны, вы должны немедленно
+        прекратить использование платформы.
+      </p>
+
+      <h2>1. Предмет Соглашения</h2>
+      <p>
+        Компания предоставляет Пользователю доступ к использованию платформы
+        Yield Scope и её функционала, включая, но не ограничиваясь: доступ к
+        образовательным материалам, интерактивным курсам, статьям по программированию,
+        AI-инструментам и экспертной поддержке (далее — «Услуги»). Настоящее Соглашение
+        регулирует все аспекты взаимодействия Пользователя с платформой на территории Франции и стран ЕС.
+      </p>
+
+      <h2>2. Обязанности и права Пользователя</h2>
+      <p>
+        Вы обязуетесь использовать сайт исключительно в законных целях для личного
+        профессионального развития. При использовании ресурсов Yield Scope
+        <strong>запрещается</strong>:
+      </p>
+      <ul>
+        <li>
+          Публиковать или передавать информацию, которая нарушает авторские права,
+          содержит вредоносный код или носит оскорбительный характер.
+        </li>
+        <li>
+          Предпринимать любые действия, направленные на взлом системы, обход
+          платежных шлюзов или нарушение безопасности цифровой инфраструктуры школы.
+        </li>
+        <li>
+          Использовать автоматизированные скрипты, ботов или парсеры для
+          копирования учебных программ и материалов без нашего разрешения.
+        </li>
+        <li>
+          Передавать данные своей учетной записи третьим лицам для совместного
+          использования платных курсов.
+        </li>
+      </ul>
+
+      <h2>3. Интеллектуальная собственность</h2>
+      <p>
+        Весь контент, размещенный на сайте, включая видеолекции, программный код,
+        методические пособия, логотипы и графику (далее — «Контент»), является
+        объектом интеллектуальной собственности Yield Scope и защищен международным
+        законодательством об авторском праве. Вам предоставляется ограниченная
+        лицензия на использование Контента исключительно в целях обучения.
+        Любое тиражирование или перепродажа материалов запрещены.
+      </p>
+
+      <h2>4. Ограничение ответственности и отказ от гарантий</h2>
+      <p>
+        Образовательные услуги и материалы предоставляются по принципу «как
+        есть» (as is). Мы стремимся к высочайшему качеству контента, однако не даем
+        гарантий, что результаты обучения обеспечат мгновенное трудоустройство, так как
+        успех зависит от личных усилий Пользователя.
+      </p>
+      <p>
+        Компания не несет ответственности за перерывы в работе сайта, связанные с
+        техническими работами или проблемами на стороне провайдеров. Мы также не
+        отвечаем за содержание сторонних ресурсов, на которые могут вести ссылки
+        в учебных материалах.
+      </p>
+
+      <h2>5. Изменения в Условиях использования</h2>
+      <p>
+        Мы оставляем за собой право обновлять настоящие Условия для соответствия
+        новым стандартам обучения или изменениям в законодательстве ЕС. Изменения
+        вступают в силу с момента публикации. Продолжение использования
+        платформы означает ваше согласие с новой редакцией Условий.
+      </p>
+
+      <h2>6. Разрешение споров</h2>
+      <p>
+        Все разногласия стороны будут стремиться разрешить путем мирных переговоров.
+        В случае невозможности достижения согласия, споры подлежат рассмотрению
+        в соответствии с законодательством Франции по месту нахождения
+        головного офиса Компании (Париж).
+      </p>
+
+      <h2>7. Контактная информация</h2>
+      <p>
+        По вопросам использования платформы или нарушения Условий,
+        пожалуйста, свяжитесь с нами:
+        <br>
+        Email: <a href="mailto:hello@yield-scope.life">hello@yield-scope.life</a>
+        <br>
+        Телефон: +33 1 89 48 09 45
+        <br>
+        Адрес: 15 Rue de la Paix, 75002 Paris, France
+      </p>
+    </div>
+  </section>
+</main>
+
+    <footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="./#home" class="logo footer__logo">
+        <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
+      </a>
+      <p class="footer__description">
+        Технологии, которые работают на вас. Постройте карьеру в IT, используя передовую цифровую инфраструктуру.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__list">
+        <li><a href="./#home" class="footer__link">Главная</a></li>
+        <li><a href="./#about" class="footer__link">О платформе</a></li>
+        <li><a href="./#benefits" class="footer__link">Преимущества</a></li>
+        <li><a href="./#innovations" class="footer__link">Инновации</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Юридическая информация</h4>
+      <ul class="footer__list">
+        <li><a href="./privacy.html" class="footer__link">Политика конфиденциальности</a></li>
+        <li><a href="./terms.html" class="footer__link">Условия использования</a></li>
+        <li><a href="./cookies.html" class="footer__link">Cookie файлы</a></li>
+        <li><a href="./personal-data-policy.html" class="footer__link">Персональные данные</a></li>
+        <li><a href="./disclaimer.html" class="footer__link">Отказ от ответственности</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contact-list">
+        <li>
+          <i data-lucide="phone" class="icon-sm"></i>
+          <a href="tel:+33189480945">+33 1 89 48 09 45</a>
+        </li>
+        <li>
+          <i data-lucide="mail" class="icon-sm"></i>
+          <a href="mailto:hello@yield-scope.life">hello@yield-scope.life</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin" class="icon-sm"></i>
+          <span>15 Rue de la Paix, 75002 Paris, France</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2026 Yield Scope. Все права защищены. Предложение активно в странах ЕС.</p>
+  </div>
+</footer>
+<div class="cookie-popup" id="cookie-popup">
+  <div class="cookie-popup__content">
+    <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+        политике</a>.</p>
+    <button class="btn btn--primary btn--sm" id="cookie-accept">Принять</button>
+  </div>
+</div>
+</body>
+
+</html>
+
