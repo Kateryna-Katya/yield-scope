@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield Scope — IT-школа нового поколения</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M16 7L24 11.5V20.5L16 25L8 20.5V11.5L16 7Z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module" crossorigin src="/yield-scope/assets/main-BN3kExUR.js"></script>
+  <link rel="stylesheet" crossorigin href="/yield-scope/assets/main-CYwLeiKV.css">
+</head>
+  <body>
+    <header class="header">
+  <div class="container header__container">
+    <a href="./#home" class="logo">
+      <div class="logo__icon"></div>
+      <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
+    </a>
+
+    <nav class="nav" id="nav-menu">
+      <ul class="nav__list">
+        <li><a href="./#home" class="nav__link">Главная</a></li>
+        <li><a href="./#about" class="nav__link">О платформе</a></li>
+        <li><a href="./#benefits" class="nav__link">Преимущества</a></li>
+        <li><a href="./#innovations" class="nav__link">Инновации</a></li>
+        <li><a href="./#blog" class="nav__link">Блог</a></li>
+        <li class="mobile-only"><a href="./#contact" class="nav__link">Связаться</a></li>
+      </ul>
+    </nav>
+
+    <a href="./#contact" class="btn btn--outline header__cta">Связаться</a>
+
+    <button class="burger" id="burger-menu" aria-label="Открыть меню">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="pages">
+    <div class="container">
+      <h1>Политика конфиденциальности</h1>
+
+      <p>
+        Настоящая Политика конфиденциальности распространяется на персональные данные,
+        предоставляемые клиентами <strong>Yield Scope</strong>, как для оказания различного рода
+        образовательных услуг, так и для других взаимодействий, как правило, в электронном
+        формате, включая участие в акциях компании, получение технической поддержки и
+        информационное сопровождение.
+      </p>
+
+      <p>
+        <strong>Yield Scope</strong> оставляет за собой право вносить изменения и дополнения
+        в действующие положения Политики конфиденциальности. Эти изменения будут иметь приоритет
+        над текущими положениями. Обратите внимание, что наши услуги могут содержать ссылки на
+        ресурсы третьих лиц, имеющих собственные правила. В таких случаях
+        <strong>Yield Scope</strong> не несет ответственности за содержание и соблюдение
+        положений сторонних компаний. Предоставляя свои данные, клиент дает согласие
+        на их обработку способами, предусмотренными настоящей Политикой.
+      </p>
+
+      <h2>Порядок сбора, хранения и уничтожения персональных данных</h2>
+      <p>
+        <strong>Yield Scope</strong> собирает персональные данные исключительно с согласия
+        пользователя для предоставления качественных услуг: записи на курсы,
+        участия в вебинарах и акциях, а также для обеспечения доступа к платформе.
+        Для предотвращения утечки данных мы применяем комплекс технических и
+        организационных мер информационной безопасности в соответствии со стандартами ЕС.
+      </p>
+
+      <p>
+        Срок хранения персональных данных определяется целями их обработки, требованиями
+        законодательства о хранении документов или до момента прекращения деятельности компании.
+        В некоторых случаях (например, архивные данные об обучении) срок хранения может
+        составлять до 75 лет в соответствии с применимыми нормами.
+      </p>
+
+      <p>
+        Уничтожение, обезличивание или блокирование части персональных данных осуществляется
+        для исключения возможности их дальнейшей обработки, если цель сбора была достигнута
+        или по запросу пользователя.
+      </p>
+
+      <p>
+        <strong>Yield Scope</strong> собирает данные в следующих категориях:
+      </p>
+
+      <h2>Техническая информация:</h2>
+      <ul>
+        <li>время доступа и IP-адрес;</li>
+        <li>источники перехода на сайт yield-scope.life;</li>
+        <li>Интернет-страницы, посещаемые пользователем;</li>
+        <li>информация о просмотренных материалах и баннерах;</li>
+        <li>
+          иная техническая информация, предоставляемая браузером
+          пользователя;
+        </li>
+        <li>
+          номер телефона (в случае звонка по контактам Франции: +33 1 89 48 09 45).
+        </li>
+      </ul>
+
+      <p>
+        При взаимодействии с формами на сайте компания собирает информацию,
+        необходимую для идентификации, персонализации обучения и обратной связи:
+      </p>
+      <ul>
+        <li>имя пользователя;</li>
+        <li>e-mail и номер телефона;</li>
+        <li>регион (для адаптации предложений под европейский рынок).</li>
+      </ul>
+
+      <h2>Информация о действиях пользователя:</h2>
+      <ul>
+        <li>
+          информация о договорах и соглашениях между клиентом и Yield Scope;
+        </li>
+        <li>данные о запросах, отправленных через формы обратной связи;</li>
+        <li>
+          информация о выбранных образовательных программах и услугах;
+        </li>
+        <li>
+          данные о произведенных платежах, предусмотренные применимым законодательством.
+        </li>
+      </ul>
+
+      <h2>Цели обработки персональных данных клиентов:</h2>
+      <ul>
+        <li>предоставление образовательных услуг и доступа к IT-платформе;</li>
+        <li>
+          учет предпочтений студентов при обновлении учебных планов;
+        </li>
+        <li>
+          информирование об акциях и инновациях через e-mail и сообщения;
+        </li>
+        <li>обеспечение экспертной поддержки на всех этапах взаимодействия.</li>
+      </ul>
+
+      <h2>
+        Yield Scope не передает персональные данные третьим лицам, за исключением:
+      </h2>
+      <ul>
+        <li>получения прямого согласия пользователя на такую передачу;</li>
+        <li>
+          требований правоохранительных или надзорных органов в соответствии с законом;
+        </li>
+        <li>процессов слияния или реорганизации компании.</li>
+      </ul>
+
+      <h2>Использование файлов cookie и маркеров</h2>
+      <p>
+        Файлы cookie позволяют анализировать трафик, сохранять настройки и улучшать работу сайта.
+        Точечные маркеры используются для учета статистики просмотров. Вы можете в любой момент
+        отключить Cookies в настройках своего браузера, однако это может ограничить доступ
+        к некоторым функциям платформы.
+      </p>
+
+      <h2>Права пользователя</h2>
+      <p>
+        Все клиенты могут запросить редактирование или удаление своих данных. Если вы желаете
+        прекратить обработку ваших персональных данных, пожалуйста, свяжитесь с нами по адресу
+        <a href="mailto:hello@yield-scope.life">hello@yield-scope.life</a>.
+      </p>
+    </div>
+  </section>
+</main>
+    <footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="./#home" class="logo footer__logo">
+        <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
+      </a>
+      <p class="footer__description">
+        Технологии, которые работают на вас. Постройте карьеру в IT, используя передовую цифровую инфраструктуру.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__list">
+        <li><a href="./#home" class="footer__link">Главная</a></li>
+        <li><a href="./#about" class="footer__link">О платформе</a></li>
+        <li><a href="./#benefits" class="footer__link">Преимущества</a></li>
+        <li><a href="./#innovations" class="footer__link">Инновации</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Юридическая информация</h4>
+      <ul class="footer__list">
+        <li><a href="./privacy.html" class="footer__link">Политика конфиденциальности</a></li>
+        <li><a href="./terms.html" class="footer__link">Условия использования</a></li>
+        <li><a href="./cookies.html" class="footer__link">Cookie файлы</a></li>
+        <li><a href="./personal-data-policy.html" class="footer__link">Персональные данные</a></li>
+        <li><a href="./disclaimer.html" class="footer__link">Отказ от ответственности</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contact-list">
+        <li>
+          <i data-lucide="phone" class="icon-sm"></i>
+          <a href="tel:+33189480945">+33 1 89 48 09 45</a>
+        </li>
+        <li>
+          <i data-lucide="mail" class="icon-sm"></i>
+          <a href="mailto:hello@yield-scope.life">hello@yield-scope.life</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin" class="icon-sm"></i>
+          <span>15 Rue de la Paix, 75002 Paris, France</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2026 Yield Scope. Все права защищены. Предложение активно в странах ЕС.</p>
+  </div>
+</footer>
+<div class="cookie-popup" id="cookie-popup">
+  <div class="cookie-popup__content">
+    <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+        политике</a>.</p>
+    <button class="btn btn--primary btn--sm" id="cookie-accept">Принять</button>
+  </div>
+</div>
+</body>
+
+</html>
+
