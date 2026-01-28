@@ -1,173 +1,135 @@
-// Инициализация иконок Lucide
-lucide.createIcons();
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Инициализация иконок
+    lucide.createIcons();
 
-// Эффект хедера при скролле
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('header--scrolled');
-    } else {
-        header.classList.remove('header--scrolled');
+    // 2. Мобильное меню
+    const burger = document.getElementById('burger-menu');
+    const nav = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    function toggleMenu() {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
     }
-});
 
-// Плавная навигация (уже работает через CSS, но добавим для контроля)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+    burger.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('active')) toggleMenu();
+        });
     });
-    // Анимация появления заголовка
-function initHeroAnimation() {
-    const title = document.getElementById('hero-title');
-    
-    // Плавное появление текста
-    setTimeout(() => {
-        title.style.transition = 'all 0.8s ease-out';
-        title.style.opacity = '1';
-        title.style.transform = 'translateY(0)';
-    }, 200);
 
-    // Микро-движение фона за мышью
+    // 3. Эффект хедера и Reveal при скролле
+    const header = document.querySelector('.header');
+    const reveals = document.querySelectorAll('.reveal');
+
+    function handleScroll() {
+        // Хедер
+        if (window.scrollY > 50) {
+            header.classList.add('header--scrolled');
+        } else {
+            header.classList.remove('header--scrolled');
+        }
+
+        // Анимация появления
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < window.innerHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Запуск при загрузке
+
+    // 4. Hero Анимация (Текст и Мышь)
+    const title = document.getElementById('hero-title');
+    if (title) {
+        setTimeout(() => {
+            title.style.opacity = '1';
+            title.style.transform = 'translateY(0)';
+        }, 300);
+    }
+
     document.addEventListener('mousemove', (e) => {
         const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
         const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-        
         const circles = document.querySelectorAll('.hero__circle');
-        circles.forEach((circle, index) => {
-            const speed = (index + 1) * 0.5;
-            circle.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+        circles.forEach((c, i) => {
+            c.style.transform = `translate(${moveX * (i + 1)}px, ${moveY * (i + 1)}px)`;
         });
     });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    initHeroAnimation();
-    lucide.createIcons(); // Переинициализация для новых иконок в Hero
-});
-    // Функция для анимации элементов при скролле
-function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    
-    reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            el.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-
-// Вызываем один раз при загрузке, чтобы проверить видимые элементы
-document.addEventListener('DOMContentLoaded', () => {
-    revealOnScroll();
-    initHeroAnimation();
-    lucide.createIcons();
-});
-    // Логика слайдера
-function initSlider() {
+    // 5. Слайдер Блога
     const track = document.getElementById('slider-track');
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
-    
-    if (!track || !nextBtn || !prevBtn) return;
 
-    const scrollAmount = 350; // На сколько пикселей скроллить за раз
+    if (track && nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => track.scrollBy({ left: 350, behavior: 'smooth' }));
+        prevBtn.addEventListener('click', () => track.scrollBy({ left: -350, behavior: 'smooth' }));
+    }
 
-    nextBtn.addEventListener('click', () => {
-        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    // Бесконечный скролл (опционально) или скрытие кнопок
-    track.addEventListener('scroll', () => {
-        const isEnd = track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5;
-        const isStart = track.scrollLeft <= 5;
-        
-        prevBtn.style.opacity = isStart ? '0.5' : '1';
-        nextBtn.style.opacity = isEnd ? '0.5' : '1';
-    });
-}
-
-// Обновите DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    initHeroAnimation();
-    revealOnScroll();
-    initSlider(); // Добавляем инициализацию слайдера
-    lucide.createIcons();
-});
-    // --- Логика формы и капчи ---
-let captchaAnswer;
-
-function generateCaptcha() {
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    captchaAnswer = num1 + num2;
-    document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
-}
-
-function initContactForm() {
+    // 6. Форма контактов и Капча
     const form = document.getElementById('contact-form');
-    const phoneInput = document.getElementById('user_phone');
-    const responseDiv = document.getElementById('form-response');
-    const submitBtn = document.getElementById('submit-btn');
-
-    generateCaptcha();
-
-    // Валидация телефона (только цифры)
-    phoneInput.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/\D/g, '');
-    });
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (form) {
+        let captchaAns;
+        const qElem = document.getElementById('captcha-question');
+        const phoneInp = document.getElementById('user_phone');
         
-        const userAnswer = parseInt(document.getElementById('captcha-answer').value);
-        
-        // Проверка капчи
-        if (userAnswer !== captchaAnswer) {
-            responseDiv.className = 'form-response error';
-            responseDiv.textContent = 'Ошибка капчи. Попробуйте еще раз.';
-            generateCaptcha();
-            return;
+        function genCaptcha() {
+            const n1 = Math.floor(Math.random() * 10) + 1;
+            const n2 = Math.floor(Math.random() * 10) + 1;
+            captchaAns = n1 + n2;
+            qElem.textContent = `${n1} + ${n2}`;
         }
+        
+        genCaptcha();
 
-        // Имитация AJAX
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
+        phoneInp.addEventListener('input', (e) => e.target.value = e.target.value.replace(/\D/g, ''));
 
-        setTimeout(() => {
-            responseDiv.className = 'form-response success';
-            responseDiv.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
-            form.reset();
-            generateCaptcha();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Запросить доступ';
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userAns = parseInt(document.getElementById('captcha-answer').value);
+            const resp = document.getElementById('form-response');
             
-            // Скрыть сообщение через 5 секунд
-            setTimeout(() => { responseDiv.style.display = 'none'; }, 5000);
-        }, 1500);
-    });
-}
+            if (userAns !== captchaAns) {
+                resp.className = 'form-response error';
+                resp.textContent = 'Неверно! Попробуйте еще раз.';
+                genCaptcha();
+                return;
+            }
 
-// Добавить в DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    initHeroAnimation();
-    revealOnScroll();
-    initSlider();
-    initContactForm(); // Инициализация формы
-    lucide.createIcons();
-});
+            const btn = form.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+
+            setTimeout(() => {
+                resp.className = 'form-response success';
+                resp.textContent = 'Успешно отправлено!';
+                form.reset();
+                genCaptcha();
+                btn.disabled = false;
+                btn.textContent = 'Запросить доступ';
+            }, 1500);
+        });
+    }
+
+    // 7. Cookie Popup Logic
+    const cookiePopup = document.getElementById('cookie-popup');
+    const cookieBtn = document.getElementById('cookie-accept');
+
+    if (!localStorage.getItem('yield_cookies_accepted')) {
+        setTimeout(() => {
+            cookiePopup.classList.add('visible');
+        }, 2000);
+    }
+
+    cookieBtn.addEventListener('click', () => {
+        localStorage.setItem('yield_cookies_accepted', 'true');
+        cookiePopup.classList.remove('visible');
+    });
 });
