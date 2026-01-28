@@ -619,3 +619,150 @@ a {
         grid-template-columns: 1fr;
     }
 }
+/* --- Стили секции Innovations --- */
+.innovations {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    /* Глубокий индиго фон */
+    color: white;
+    overflow: hidden;
+}
+
+.section-header--light .section-title {
+    color: white;
+}
+
+.section-header--light .section-tagline {
+    color: #c7d2fe;
+}
+
+.innovations__diagram-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 2rem;
+}
+
+.innovations__col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 300px;
+}
+
+.innovations__col--left {
+    text-align: right;
+}
+
+.innovations__col--right {
+    text-align: left;
+}
+
+.innovations__item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+}
+
+.innovations__item p {
+    color: #c7d2fe;
+    font-size: 0.95rem;
+}
+
+/* --- SVG Визуализация --- */
+.innovations__viz {
+    flex: 0 0 400px;
+    height: 400px;
+    position: relative;
+}
+
+.viz-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.viz-core {
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.6));
+    animation: pulseCore 3s infinite alternate ease-in-out;
+}
+
+.viz-core-ring {
+    animation: spinRing 20s linear infinite;
+    transform-origin: center;
+}
+
+/* Анимация потока данных по линиям */
+.viz-path {
+    stroke-dasharray: 20 10;
+    animation: flowDash 3s linear infinite;
+}
+
+.viz-path--2 {
+    animation-delay: -1s;
+}
+
+.viz-path--3 {
+    animation-delay: -2s;
+}
+
+.viz-point {
+    filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+}
+
+/* CSS Keyframes Animations */
+@keyframes flowDash {
+    to {
+        stroke-dashoffset: -60;
+    }
+}
+
+@keyframes pulseCore {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes spinRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Адаптив для диаграммы */
+@media (max-width: 1024px) {
+    .innovations__diagram-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .innovations__col {
+        text-align: center;
+        gap: 2rem;
+        max-width: 100%;
+    }
+
+    .innovations__col--left {
+        order: 2;
+    }
+
+    .innovations__col--right {
+        order: 3;
+    }
+
+    .innovations__viz {
+        order: 1;
+        transform: scale(0.8);
+    }
+}
