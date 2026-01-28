@@ -22,4 +22,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+    // Анимация появления заголовка
+function initHeroAnimation() {
+    const title = document.getElementById('hero-title');
+    
+    // Плавное появление текста
+    setTimeout(() => {
+        title.style.transition = 'all 0.8s ease-out';
+        title.style.opacity = '1';
+        title.style.transform = 'translateY(0)';
+    }, 200);
+
+    // Микро-движение фона за мышью
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+        
+        const circles = document.querySelectorAll('.hero__circle');
+        circles.forEach((circle, index) => {
+            const speed = (index + 1) * 0.5;
+            circle.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroAnimation();
+    lucide.createIcons(); // Переинициализация для новых иконок в Hero
+});
 });
