@@ -50,4 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroAnimation();
     lucide.createIcons(); // Переинициализация для новых иконок в Hero
 });
+    // Функция для анимации элементов при скролле
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+// Вызываем один раз при загрузке, чтобы проверить видимые элементы
+document.addEventListener('DOMContentLoaded', () => {
+    revealOnScroll();
+    initHeroAnimation();
+    lucide.createIcons();
+});
 });
