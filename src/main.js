@@ -108,4 +108,66 @@ document.addEventListener('DOMContentLoaded', () => {
     initSlider(); // Добавляем инициализацию слайдера
     lucide.createIcons();
 });
+    // --- Логика формы и капчи ---
+let captchaAnswer;
+
+function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    captchaAnswer = num1 + num2;
+    document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
+}
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const phoneInput = document.getElementById('user_phone');
+    const responseDiv = document.getElementById('form-response');
+    const submitBtn = document.getElementById('submit-btn');
+
+    generateCaptcha();
+
+    // Валидация телефона (только цифры)
+    phoneInput.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+        
+        // Проверка капчи
+        if (userAnswer !== captchaAnswer) {
+            responseDiv.className = 'form-response error';
+            responseDiv.textContent = 'Ошибка капчи. Попробуйте еще раз.';
+            generateCaptcha();
+            return;
+        }
+
+        // Имитация AJAX
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        setTimeout(() => {
+            responseDiv.className = 'form-response success';
+            responseDiv.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
+            form.reset();
+            generateCaptcha();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Запросить доступ';
+            
+            // Скрыть сообщение через 5 секунд
+            setTimeout(() => { responseDiv.style.display = 'none'; }, 5000);
+        }, 1500);
+    });
+}
+
+// Добавить в DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroAnimation();
+    revealOnScroll();
+    initSlider();
+    initContactForm(); // Инициализация формы
+    lucide.createIcons();
+});
 });

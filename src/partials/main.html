@@ -262,3 +262,68 @@
         </div>
     </div>
 </section>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__grid">
+            <div class="contact__info reveal">
+                <h2 class="section-title">Бесплатная консультация по всем вопросам</h2>
+                <p class="section-tagline">Оставьте заявку, и наши эксперты помогут вам составить индивидуальную
+                    стратегию роста.</p>
+
+                <div class="contact__details">
+                    <div class="contact__detail-item">
+                        <div class="icon-circle"><i data-lucide="phone"></i></div>
+                        <div>
+                            <span>Телефон</span>
+                            <p>+33 1 89 48 09 45</p>
+                        </div>
+                    </div>
+                    <div class="contact__detail-item">
+                        <div class="icon-circle"><i data-lucide="mail"></i></div>
+                        <div>
+                            <span>Email</span>
+                            <p>hello@yield-scope.life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact__form-wrapper reveal">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="user_name">Ваше имя</label>
+                        <input type="text" id="user_name" name="name" placeholder="Александр" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_email">Электронная почта</label>
+                        <input type="email" id="user_email" name="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_phone">Телефон (только цифры)</label>
+                        <input type="tel" id="user_phone" name="phone" placeholder="33189480945" required>
+                        <small class="error-msg" id="phone-error">Введите корректный номер (только цифры)</small>
+                    </div>
+
+                    <div class="form-group captcha-group">
+                        <label>Решите пример: <span id="captcha-question"></span></label>
+                        <input type="number" id="captcha-answer" placeholder="Ваш ответ" required>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">Я согласен с <a href="privacy.html">политикой
+                                конфиденциальности</a></label>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                        <span>Запросить доступ</span>
+                    </button>
+
+                    <div id="form-response" class="form-response"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
