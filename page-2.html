@@ -5,29 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/yield-scope/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/yield-scope/assets/styles-uA89MNi8.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <span class="logo__icon"></span>
+      <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
+    </a>
+
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+      <ul class="nav__list">
+        <li><a href="#" class="nav__link">Главная</a></li>
+        <li><a href="#about" class="nav__link">О платформе</a></li>
+        <li><a href="#benefits" class="nav__link">Преимущества</a></li>
+        <li><a href="#innovations" class="nav__link">Инновации</a></li>
+        <li><a href="#blog" class="nav__link">Блог</a></li>
       </ul>
     </nav>
+
+    <a href="#contact" class="btn btn--outline header__cta">Связаться</a>
+
+    <button class="burger" aria-label="Menu">
+      <span></span>
+    </button>
   </div>
 </header>
-
 
     <main>
       <div class="container">
@@ -38,20 +42,58 @@
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <a href="/" class="logo footer__logo">
+        <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
       </a>
-    </p>
+      <p class="footer__description">
+        Технологии, которые работают на вас. Постройте карьеру в IT, используя передовую цифровую инфраструктуру.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__list">
+        <li><a href="#" class="footer__link">Главная</a></li>
+        <li><a href="#about" class="footer__link">О платформе</a></li>
+        <li><a href="#benefits" class="footer__link">Преимущества</a></li>
+        <li><a href="#innovations" class="footer__link">Инновации</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Юридическая информация</h4>
+      <ul class="footer__list">
+        <li><a href="privacy.html" class="footer__link">Политика конфиденциальности</a></li>
+        <li><a href="terms.html" class="footer__link">Условия использования</a></li>
+        <li><a href="cookies.html" class="footer__link">Cookie файлы</a></li>
+        <li><a href="personal-data-policy.html" class="footer__link">Персональные данные</a></li>
+        <li><a href="disclaimer.html" class="footer__link">Отказ от ответственности</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты</h4>
+      <ul class="footer__contact-list">
+        <li>
+          <i data-lucide="phone" class="icon-sm"></i>
+          <a href="tel:+33189480945">+33 1 89 48 09 45</a>
+        </li>
+        <li>
+          <i data-lucide="mail" class="icon-sm"></i>
+          <a href="mailto:hello@yield-scope.life">hello@yield-scope.life</a>
+        </li>
+        <li>
+          <i data-lucide="map-pin" class="icon-sm"></i>
+          <span>15 Rue de la Paix, 75002 Paris, France</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; 2026 Yield Scope. Все права защищены. Предложение активно в странах ЕС.</p>
   </div>
 </footer>
-
   </body>
 </html>
