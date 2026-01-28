@@ -73,4 +73,39 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroAnimation();
     lucide.createIcons();
 });
+    // Логика слайдера
+function initSlider() {
+    const track = document.getElementById('slider-track');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    
+    if (!track || !nextBtn || !prevBtn) return;
+
+    const scrollAmount = 350; // На сколько пикселей скроллить за раз
+
+    nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    // Бесконечный скролл (опционально) или скрытие кнопок
+    track.addEventListener('scroll', () => {
+        const isEnd = track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5;
+        const isStart = track.scrollLeft <= 5;
+        
+        prevBtn.style.opacity = isStart ? '0.5' : '1';
+        nextBtn.style.opacity = isEnd ? '0.5' : '1';
+    });
+}
+
+// Обновите DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroAnimation();
+    revealOnScroll();
+    initSlider(); // Добавляем инициализацию слайдера
+    lucide.createIcons();
+});
 });
