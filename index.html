@@ -15,30 +15,33 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/yield-scope/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/yield-scope/assets/styles-DGOtSmhV.css">
+    <link rel="stylesheet" crossorigin href="/yield-scope/assets/styles-C8X6EMRc.css">
   </head>
   <body>
     <header class="header">
   <div class="container header__container">
     <a href="/" class="logo">
-      <span class="logo__icon"></span>
+      <div class="logo__icon"></div>
       <span class="logo__text">Yield<span class="logo__text--alt">Scope</span></span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" id="nav-menu">
       <ul class="nav__list">
         <li><a href="#" class="nav__link">Главная</a></li>
         <li><a href="#about" class="nav__link">О платформе</a></li>
         <li><a href="#benefits" class="nav__link">Преимущества</a></li>
         <li><a href="#innovations" class="nav__link">Инновации</a></li>
         <li><a href="#blog" class="nav__link">Блог</a></li>
+        <li class="mobile-only"><a href="#contact" class="nav__link">Связаться</a></li>
       </ul>
     </nav>
 
     <a href="#contact" class="btn btn--outline header__cta">Связаться</a>
 
-    <button class="burger" aria-label="Menu">
-      <span></span>
+    <button class="burger" id="burger-menu" aria-label="Открыть меню">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
     </button>
   </div>
 </header>
@@ -360,7 +363,7 @@
 
                     <div class="form-checkbox">
                         <input type="checkbox" id="consent" required>
-                        <label for="consent">Я согласен с <a href="privacy.html">политикой
+                        <label for="consent">Я согласен с <a href="./privacy.html">политикой
                                 конфиденциальности</a></label>
                     </div>
 
@@ -430,6 +433,12 @@
     <p>&copy; 2026 Yield Scope. Все права защищены. Предложение активно в странах ЕС.</p>
   </div>
 </footer>
-
+<div class="cookie-popup" id="cookie-popup">
+  <div class="cookie-popup__content">
+    <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+        политике</a>.</p>
+    <button class="btn btn--primary btn--sm" id="cookie-accept">Принять</button>
+  </div>
+</div>
   </body>
 </html>
