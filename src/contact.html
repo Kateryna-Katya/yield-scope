@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield Scope — IT-школа нового поколения</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M16 7L24 11.5V20.5L16 25L8 20.5V11.5L16 7Z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+  <body>
+    <load
+      src="./partials/header.html"
+/>
+
+<main>
+  <section class="pages">
+    <div class="container">
+      <h1>Контактная информация</h1>
+
+      <p>
+        Мы всегда на связи, чтобы помочь вам сделать первый шаг в IT.
+        Свяжитесь с нами любым удобным для вас способом.
+      </p>
+
+      <div class="contact-page__grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem;">
+
+        <div class="contact-item"
+          style="background: var(--surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border);">
+          <div style="color: var(--primary); margin-bottom: 1rem;">
+            <i data-lucide="phone" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Телефон</h3>
+          <p style="margin-bottom: 0;">Основная линия (Франция):</p>
+          <a href="tel:+33189480945"
+            style="font-weight: 700; font-size: 1.2rem; color: var(--text-main); text-decoration: none;">+33 1 89 48 09
+            45</a>
+        </div>
+
+        <div class="contact-item"
+          style="background: var(--surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border);">
+          <div style="color: var(--primary); margin-bottom: 1rem;">
+            <i data-lucide="mail" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Email</h3>
+          <p style="margin-bottom: 0;">Общие вопросы:</p>
+          <a href="mailto:hello@yield-scope.life"
+            style="font-weight: 700; font-size: 1.2rem; color: var(--text-main); text-decoration: none;">hello@yield-scope.life</a>
+        </div>
+
+        <div class="contact-item"
+          style="background: var(--surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border);">
+          <div style="color: var(--primary); margin-bottom: 1rem;">
+            <i data-lucide="map-pin" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Офис</h3>
+          <p style="margin-bottom: 0; font-weight: 700; color: var(--text-main); line-height: 1.4;">
+            15 Rue de la Paix, <br>
+            75002 Paris, France
+          </p>
+        </div>
+
+        <div class="contact-item"
+          style="background: var(--surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border);">
+          <div style="color: var(--primary); margin-bottom: 1rem;">
+            <i data-lucide="clock" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">График работы</h3>
+          <p style="margin-bottom: 0;">Пн — Пт: 09:00 – 19:00</p>
+          <p style="margin-bottom: 0;">Сб — Вс: Выходной</p>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 4rem; padding: 2rem; background: #eef2ff; border-radius: 24px; text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Техническая поддержка</h3>
+        <p style="margin-bottom: 1.5rem;">Если вы уже являетесь нашим студентом и вам нужна помощь с доступом к
+          платформе:</p>
+        <a href="mailto:support@yield-scope.life" class="btn btn--primary">Написать в поддержку</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <load src="./partials/footer.html" />
+<div class="cookie-popup" id="cookie-popup">
+  <div class="cookie-popup__content">
+    <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+        политике</a>.</p>
+    <button class="btn btn--primary btn--sm" id="cookie-accept">Принять</button>
+  </div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+
+</html>
+
